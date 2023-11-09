@@ -1,76 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link href="/dist/output.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title> 
-    <img class="heart" src="logo.jpg" alt="Logo" class="logo">
-  </head>
-  <body>
-    <div class="login">
+    <title>Login Page</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* Divide the layout into 4 equal columns */
+            gap: 1rem; /* Add some gap between grid items */
+            padding: 2rem; /* Add padding around the grid */
+        }
+
+        .grid2 {
+          display: grid;
+          grid-template-columns:1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr; 
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .col-12 {
+            grid-column: 1 / span 1; 
+            display: inline-block;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-1 {
+            grid-column: 1 / span 1; /* Place the logo in the first column */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-2{
+          grid-column: 2 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-3 {
+            grid-column: 3 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(9, 9, 9, .1), 0 8px 16px rgba(9, 9, 9, 0.1);
+            box-sizing: border-box;
+            margin: 100px 0 0;
+            padding: 20px 0 28px;
+            width: 396px;
+            height: 300px;
+            background-color: #cea7a7;
+        }
+
+        .mb-4 {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.2rem;
+            padding: 0.1rem; /* Increased padding for input boxes */
+            border-radius: 0.2rem;
+            background-color: rgb(171, 71, 71);
+            width: 380px;
+            height: 30px;
+        }
+
+        .login {
+            margin: 0 auto;
+            padding: 1px;
+            background-color: rgb(171, 71, 71);
+            width: 360px;
+            height: 40px;
+            color: black;
+            margin-top: 5px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: blue;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 1rem; /* Add some margin at the top of the links */
+        }
+
+        .heart {
+            height: 500px; /* Set the height of the logo */
+            width: 500px; /* Set the width of the logo */
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            height: 600px; 
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .popup-content {
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px 8px 8px 8px;
+            box-sizing: border-box;
+            position: auto;
+            width: 400px;
+            height: 350px;
+        }
+
+        .inputs{
+          margin: 0 auto;
+          padding: 1px;
+          border-radius: 10px 10px 10px 10px;
+          width: 355px;
+          height: 40px;
+          margin-top: 5px;
+          margin-bottom: 2px;
+        }
+
+        .boxinputs{
+          margin: auto;
+          border-radius: 1px 1px 1px 1px;
+          width: 355px;
+          height: 30px;
+        }
+
+        .signup{
+          width: 254px;
+          height: 30px;
+          background-color: red;
+          margin-top: 5px;
+        }
+
+        .names{
+          margin-top: 13px;
+          border-radius: 1px 1px 1px 1px;
+          width: 166px;
+          height: 30px;
+          margin-left: 9px;
+        }
         
-      <div class="form">
-          <div class="mb-4">
-              <input type="text" id="username" placeholder="Username">
-          </div>
-          <div class="mb-4">
-              <input type="password" id="password" placeholder="Password">
-          </div>
-          <button onclick="validateLogin()">Login</button>
-          <div class="links">
-              <a href="#">Forgot Password</a>
-              <a href="signup.html">Sign Up</a>
-          </div>
-      </div>
-      
+    </style>
+</head>
+
+<body style="background-color: #e5bfbf;">
+    <div class="grid">
+        <div class="col-1">
+            <img class="heart" src="logo.png" alt="Logo">
+        </div>
+
+        <div class="col-3">
+            <input class="inputs" type="text" id="username" placeholder="Email or Phone Number">
+            <input class="inputs" type="password" id="password" placeholder="Password">
+            <button class="login" onclick="validateLogin()">Login</button>
+            <a href="#">Forgot Password</a>
+            <button class = "signup" onclick="showPopup()">Sign Up</button>          
+        </div>
     </div>
-  </body>
-  <style>
-    .mb-4 {
-        
-        display:flex;
-        flex-direction: left;
-        margin-bottom: 1rem;
-        padding: 0.1rem;
-        border-radius: 0.2rem;
-        background-color: rgb(05, 04, 04);
-    }
-    .form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color:blue
+
+    <div class="col-2">
+      <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <!-- Sign-up form goes here -->
+            <div class="grid2">
+              <div class="col-12">
+
+                <input class="names" type="text" id="firstname" placeholder="First Name">
+                <input class="names" type="text" id="lastname" placeholder="Last Name"> 
+              </div>
+                      <input class="boxinputs" type="date" id="dob" placeholder="Date of Birth">
+                      <input class="boxinputs" type="email" id="email" placeholder="Email or Phone Number">
+                      <input class="boxinputs" type="password" id="password" placeholder="Password">
+                      <button class="login" onclick="createAccount()">Create Account</button>
+                      <button class="login" onclick="closePopup()">Close</button>
+            </div>
+                  
+        </div>
+          
+      </div>
+    </div>
+      
+  </div>
+
+  <!-- JavaScript to show/hide the popup -->
+  <script>
+    // Function to display the popup
+    function showPopup() {
+        document.getElementById('signupPopup').style.display = 'flex';
     }
 
-    .links{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        width: 70%;
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('signupPopup').style.display = 'none';
     }
 
-    .heart {
-        height: 10rem;
-        width: 10rem;
+    // Event listener for the "Sign Up" link
+    document.getElementById('signupLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        showPopup(); // Call the function to display the popup
+    });
+
+    // Function to validate login (for demonstration purposes)
+    function validateLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Perform login validation here (for demonstration, simply show an alert)
+        alert('Login attempt with Username: ' + username + ', Password: ' + password);
     }
-    .login {
-    max-width: 11rem;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    background-color: rgb(235, 209, 209);
-  }
-</style>
+</script>
+</body>
 
 </html>
+
