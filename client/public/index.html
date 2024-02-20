@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link href="/dist/output.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3ALTH - Log In or Sign Up</title>
+    <style>
+        .grid {
+            width: 1440px;
+            height: 700px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* Divide the layout into 4 equal columns */
+            grid-template-rows: 1fr 1fr; /* Divide the layout into 4 equal rows */
+            gap: 10px; /* Add some gap between grid items */
+            padding: 0px; /* Add padding around the grid */
+        }
+        .grid2 {
+          display: grid;
+          grid-template-columns:1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr; 
+          gap: 1px;
+          padding: 1px;
+        }
+        .row2{
+          grid-column: auto / span 4;
+          grid-row: 2 / span 1;
+          height: 225px;
+          background-color: #ffffff;
+          width: auto;
+        }
+        .col-12 {/*pop up fill in shit*/
+            grid-column: 1 / span 1; 
+            display: inline-block;
+            border-radius: 8px 8px 8px 8px;
+            box-sizing: border-box;
+            padding: 20px; 
+            width: 400px;
+        }
+
+        .col-1 {
+            grid-column: 1 / span 1; /* Place the logo in the first column */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 200px;
+            margin-bottom: 200px;
+        }
+
+        .col-2{
+            grid-column: 2 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-3 {/*for the pop up box*/
+            grid-column: 3 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(9, 9, 9, .1), 0 8px 16px rgba(9, 9, 9, 0.1);
+            box-sizing: border-box;
+            margin: 100px 0 0;
+            padding: 20px 0 28px;
+            width: 416px;
+            height: 300px;
+            background-color: #cea7a7;
+            margin-left: 200px;
+        }
+
+        .login {
+            margin: 0 auto;
+            background-color: rgb(171, 71, 71);
+            width: 377px;
+            height: 50px;
+            color: black;
+            margin-top: 5px;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 20px;
+            padding: 10px 10px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .heart {
+            height: 300px; /* Set the height of the logo */
+            width: 300px; /* Set the width of the logo */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            height: 600px; 
+            justify-content: center;
+            align-items: center;   
+        }
+        
+        .popup-content {
+            background-color: #e9d9d9;
+            border-radius: 8px 8px 8px 8px;
+            box-sizing: border-box;
+            position: auto;
+            width: 420px;
+            height: 400px;
+        }
+
+        .inputs{
+          margin: 0 auto;
+          border-radius: 10px 10px 10px 10px;
+          width: 355px;
+          height: 40px;
+          margin-top: 5px;
+          margin-bottom: 2px;
+          font-size: 17px;
+          padding: 10px 10px;
+        }
+
+        .boxinputs{
+          border-radius: 10px 10px 10px 10px;
+          width: 355px;
+          height: 30px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          font-size: 17px;
+          padding: 8px 8px;
+          position: center;
+        }
+
+        .signup{
+          width: 85px;
+          height: 40px;
+          background-color: rgb(245, 93, 93);
+          margin-top: 15px;
+          border-radius: 10px 10px 10px 10px;
+          font-size: 17px;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          white-space: nowrap;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .names{
+          border-radius: 8px 8px 8px 8px;
+          width: 150px;
+          height: 30px;
+          margin-bottom: 5px;
+          font-size: 17px;
+          padding: 8px 8px;
+          
+        }
+
+        .x{
+          width: 11px;
+          height: 11px;
+          margin-bottom: 60px;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          white-space: nowrap;
+        }
+
+        .forgot{
+          margin-top: 5px;
+          font-size: 13.5px;
+        }
+
+        .font{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .health{
+          height: 225px; /* Set the height of the logo */
+          width: 1440px; /* Set the width of the logo */
+        }
+        
+    </style>
+</head>
+
+<body style="background-color: #f9f3f3;">
+    <div class="grid">
+        <div class="col-1">
+            <img class="heart" src="logo.png" alt="Logo">
+          <h2 class="font">Your one stop for H3ALTH</h2>
+        </div>
+
+        <div class="col-3">
+            <input class="inputs" type="text" id="username" placeholder="Email or Phone Number">
+            <input class="inputs" type="password" id="password" placeholder="Password">
+            <button class="login" onclick="validateLogin()">Log In</button>
+            <a class="forgot" href="#">Forgot Password ?</a>
+            <button class = "signup" onclick="showPopup()">Sign Up</button>          
+        </div>
+
+        <div class="row2">
+          <img class="health" src="health.png" alt="Logo">
+        </div>
+    </div>
+
+    <div class="col-2">
+      <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <div class="grid2">
+              <div class="col-12">
+                <img class="x" src="x.png" alt="Logo" onclick="closePopup()">
+                <input class="names" type="text" id="firstname" placeholder="First Name">
+                <input class="names" type="text" id="lastname" placeholder="Last Name"> 
+                <input class="boxinputs" type="date" id="dob" placeholder="Date of Birth">
+                <input class="boxinputs" type="email" id="email" placeholder="Email or Phone Number">
+                <input class="boxinputs" type="password" id="password" placeholder="Password">
+                <button class="login" id="signupButton" onclick="createAccount()">Create Account</button>
+              </div>
+                     
+            </div>
+                  
+        </div>
+          
+      </div>
+    </div>
+      
+  </div>
+
+  <!-- JavaScript to show/hide the popup -->
+  <script>
+    // Function to display the popup
+    function showPopup() {
+        document.getElementById('signupPopup').style.display = 'flex';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('signupPopup').style.display = 'none';
+    }
+
+    // Event listener for the "Sign Up" link
+    document.getElementById('signupLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        showPopup(); // Call the function to display the popup
+    });
+
+    // Function to validate login (for demonstration purposes)
+    function validateLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Perform login validation here (for demonstration, simply show an alert)
+        alert('Login attempt with Username: ' + username + ', Password: ' + password);
+
+        var loginSuccessful = true; // Change this based on your actual validation logic
+
+    if (loginSuccessful) {
+        window.location.href = 'homePage.html';
+    }
+    }
+
+    function createAccount() {
+        // Get user input values
+        var firstName = document.getElementById('firstname').value;
+        var lastName = document.getElementById('lastname').value;
+        var dob = document.getElementById('dob').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        // Create an object to store user information
+        var userData = {
+            firstName: firstName,
+            lastName: lastName,
+            dob: dob,
+            email: email,
+            password: password
+        };
+
+        // Send a POST request to your server
+        fetch('http://localhost:3000/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: 'Shajaat',
+    password: 'testing786',
+  }),
+})
+.then(response => response.text())
+.then(message => {
+  alert(message);
+})
+.catch(error => {
+  console.error(error);
+  alert('Failed to create account. Please try again.');
+});
+    }
+</script>
+</body>
+
+</html>
+
