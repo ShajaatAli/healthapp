@@ -1,0 +1,177 @@
+        .grid {
+            width: 1440px;
+            height: 700px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* Divide the layout into 4 equal columns */
+            grid-template-rows: 1fr 1fr; /* Divide the layout into 4 equal rows */
+            gap: 10px; /* Add some gap between grid items */
+            padding: 0px; /* Add padding around the grid */
+        }
+        .grid2 {
+          display: grid;
+          grid-template-columns:1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr; 
+          gap: 1px;
+          padding: 1px;
+        }
+        .row2{
+          grid-column: auto / span 4;
+          grid-row: 2 / span 1;
+          height: 225px;
+          background-color: #ffffff;
+          width: auto;
+        }
+        .col-12 {/*pop up fill in shit*/
+            grid-column: 1 / span 1; 
+            display: inline-block;
+            border-radius: 8px 8px 8px 8px;
+            box-sizing: border-box;
+            padding: 20px; 
+            width: 400px;
+        }
+
+        .col-1 {
+            grid-column: 1 / span 1; /* Place the logo in the first column */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 200px;
+            margin-bottom: 200px;
+        }
+
+        .col-2{
+            grid-column: 2 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-3 {/*for the pop up box*/
+            grid-column: 3 / span 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(9, 9, 9, .1), 0 8px 16px rgba(9, 9, 9, 0.1);
+            box-sizing: border-box;
+            margin: 100px 0 0;
+            padding: 20px 0 28px;
+            width: 416px;
+            height: 300px;
+            background-color: #cea7a7;
+            margin-left: 200px;
+        }
+
+        .login {
+            margin: 0 auto;
+            background-color: rgb(171, 71, 71);
+            width: 377px;
+            height: 50px;
+            color: black;
+            margin-top: 5px;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 20px;
+            padding: 10px 10px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .heart {
+            height: 300px; /* Set the height of the logo */
+            width: 300px; /* Set the width of the logo */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            height: 600px; 
+            justify-content: center;
+            align-items: center;   
+        }
+        
+        .popup-content {
+            background-color: #e9d9d9;
+            border-radius: 8px 8px 8px 8px;
+            box-sizing: border-box;
+            position: auto;
+            width: 420px;
+            height: 400px;
+        }
+
+        .inputs{
+          margin: 0 auto;
+          border-radius: 10px 10px 10px 10px;
+          width: 355px;
+          height: 40px;
+          margin-top: 5px;
+          margin-bottom: 2px;
+          font-size: 17px;
+          padding: 10px 10px;
+        }
+
+        .boxinputs{
+          border-radius: 10px 10px 10px 10px;
+          width: 355px;
+          height: 30px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          font-size: 17px;
+          padding: 8px 8px;
+          position: center;
+        }
+
+        .signup{
+          width: 85px;
+          height: 40px;
+          background-color: rgb(245, 93, 93);
+          margin-top: 15px;
+          border-radius: 10px 10px 10px 10px;
+          font-size: 17px;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          white-space: nowrap;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .names{
+          border-radius: 8px 8px 8px 8px;
+          width: 150px;
+          height: 30px;
+          margin-bottom: 5px;
+          font-size: 17px;
+          padding: 8px 8px;
+          
+        }
+
+        .x{
+          width: 11px;
+          height: 11px;
+          margin-bottom: 60px;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+          white-space: nowrap;
+        }
+
+        .forgot{
+          margin-top: 5px;
+          font-size: 13.5px;
+        }
+
+        .font{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .health{
+          height: 225px; /* Set the height of the logo */
+          width: 1440px; /* Set the width of the logo */
+        }
